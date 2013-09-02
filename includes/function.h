@@ -9,3 +9,10 @@
 /*   Updated: 2013/09/02 13:02:12 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef FUNCTION
+# define FUNCTION
+
+void	ft_putchar(char c);
+
+#endif
