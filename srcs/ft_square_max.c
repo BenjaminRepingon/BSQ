@@ -23,7 +23,6 @@ void ft_init(int *x, int *y, int *i, int *fd)
 
 st_plateau	ft_square_copy(char *av)
 {
-
 	int	fd;
 	int	ret;
 	int	x;

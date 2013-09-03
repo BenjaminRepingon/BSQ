@@ -12,43 +12,51 @@
 #include "struct.h"
 #include <stdio.h>
 
-void	ft_init(int *i, int *j, int *l, square *sq)
+int ft_check_one_square(int x, int y, square sq, map mp)
 {
-	i = 0;
-	j = 0;
-	l = 0;
-	sq->boolcheck = 0;
+	int fx;
+	int fy;
+
+	fx = 0;
+	fy = 0;
+	while (fy < sq.size)
+	{
+		fx = 0;
+		while (fx < sq.size)
+		{	
+			if (mp.mem[(fx + x) + (mp.x + 1) * (y + fy)] == 'o')
+				return (0);
+			fx++;			
+		}
+		fy++;
+	}
+	return (1);
 }
 
 square	ft_check_square(square sq, map mp)
 {
-	int	l;
-	int	k;
+	int	x;
+	int	y;
 
-	while (y < mp.y)
+	y = 0;
+	sq.boolcheck = 0;
+	while (y < ((mp.y + 1) - sq.size))
 	{
-		while (x < mp.x)
+		x = 0;
+		while (x < (mp.x - sq.size))
 		{
-			if (mp.mem[x + (mp.x) * y] == 'o')
-				sq.boolcheck = 0;
+			if (ft_check_one_square(x, y, sq, mp))
+			{
+				sq.x = x;
+				sq.y = y;
+				sq.boolcheck = 1;
+				return (sq);
+			}
 			x++;
 		}
 		y++;
 	}
+	sq.x = 0;
+	sq.boolcheck = 0;
 	return (sq);
-}
-
-int main()
-{
-	map mp;
-	square sq;
-
-	sq.size = 2;
-	mp.x = 6;
-	mp.y = 3;
-	mp.max = 3;
-	mp.mem = ".ooo..\no.....\n......\n";
-	ft_check_square(sq, mp);
-	printf("origin:%i\nsize:%i\nboolcheck:%i\n", sq.origin, sq.size, sq.boolcheck);
-	return 0;
 }

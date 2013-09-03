@@ -15,7 +15,8 @@
 typedef	struct	st_square
 {
 	int	boolcheck;
-	int origin;
+	int x;
+	int y;
 	int size;
 }   square;
 
