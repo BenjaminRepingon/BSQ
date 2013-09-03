@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #define BUFFSIZE 1
 #include <stdlib.h>
-#include "st_plateau.h"
+#include "st_map.h"
 
 void ft_init(int *x, int *y, int *i, int *fd)
 {
@@ -21,7 +21,7 @@ void ft_init(int *x, int *y, int *i, int *fd)
 	fd = 0;
 }
 
-st_plateau	ft_square_copy(char *av)
+st_map	ft_square_copy(char *av)
 {
 	int	fd;
 	int	ret;
@@ -29,10 +29,10 @@ st_plateau	ft_square_copy(char *av)
 	int	y;
 	int	i;
 	char	buf[BUFFSIZE + 1];
-	st_plateau	plateau;
+	st_map	map;
 
 	ft_init(&x, &y, &i, &fd);
-	plateau.mem = (char*)malloc(BUFFSIZE);
+	map.mem = (char*)malloc(BUFFSIZE);
 	if (av != "")
 	{
 		if (ft_error("map",(fd = open(av, O_RDONLY))))
@@ -45,15 +45,15 @@ st_plateau	ft_square_copy(char *av)
 		if (buf[0] != '\n')
 			x++;
 		buf[ret] = '\0';
-		plateau.mem[i] = buf[0];
+		map.mem[i] = buf[0];
 		i++;
 	}
-	plateau.mem[i] = '\0';
+	map.mem[i] = '\0';
 	if (y != 0)
 		x = x / y;
 	if (y < x)
-		plateau.max = y;
+		map.max = y;
 	else
-		plateau.max = x;
-	return (plateau);
+		map.max = x;
+	return (map);
 }
