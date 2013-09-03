@@ -47,10 +47,17 @@ map	ft_map_copy(char *av, int ac)
 	}
 	while ((ret = read(fd, buf, BUFFSIZE)))
 	{
-		if (buf[0] == '\n')
+		if (y < 1)
+		{
 			y++;
-		if (buf[0] != '\n')
-			x++;
+		}
+		else
+		{
+			if (buf[0] == '\n')
+				y++;
+			if (buf[0] != '\n')
+				x++;
+		}
 		buf[ret] = '\0';
 		mp.mem[i] = buf[0];
 		i++;

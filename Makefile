@@ -30,7 +30,7 @@ $(NAME):
 	@Echo
 	@Echo
 	@Echo
-	$(GCC)	$(MAINC)	$(FONCT)	$(SQTES)	$(SQMAX)	$(MPCPY)	$(ERROR)	$(DISPL)	$(CHECK) $(GFLAGS)
+	$(GCC)	$(MAINC)	$(FONCT)	$(SQTES)	$(MPCPY)	$(ERROR)	$(DISPL)	$(CHECK) $(GFLAGS)
 	@Echo
 	@Echo
 	@Echo "MAKE: End of compilation"

@@ -10,11 +10,11 @@ for (my $i = 0; $i < $y; $i++)
 	{
 		if (int(rand($y) * 2) < $density) 
 		{
-			print "o ";
+			print "o";
 		}
 		else 
 		{
-			print ". ";
+			print ".";
 		}
 	}
 	print "\n";
