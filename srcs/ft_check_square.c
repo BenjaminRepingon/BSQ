@@ -33,12 +33,14 @@ int ft_check_one_square(int x, int y, square sq, map mp)
 	return (1);
 }
 
-square	ft_check_square(square sq, map mp)
+square	ft_check_square(int size, map mp)
 {
 	int	x;
 	int	y;
+	square sq;
 
 	y = 0;
+	sq.size = size;
 	sq.boolcheck = 0;
 	while (y < ((mp.y + 1) - sq.size))
 	{

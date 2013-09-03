@@ -10,22 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_square_test(int size)
+square		ft_square_test(int size, mp)
 {
 	int		valid;
 
-	valid = verifcarre(size);
+	valid = ft_check_square(sq.size, mp);
 	if (!valid)
 	{
-		ft_square_test(valid / 2);
+		ft_square_test(sq.size / 2, mp);
 	}
-	else if (valid && !(verifcarre(size + 1)))
+	else if (valid && !(ft_check_square(sq.size + 1, mp)))
 	{
-		return (size);
+		return (sq);
 	}
 	else
 	{
-		ft_square_test(valid * 1.5);
+		ft_square_test(sq.size * 1.5, mp);
 	}
 	ft_putstr("Error in recursive square test !");
 	return (0);

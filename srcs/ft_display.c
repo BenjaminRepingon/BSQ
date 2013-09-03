@@ -14,28 +14,23 @@
 #include <unistd.h>
 #include "struct.h"
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-void	ft_display(char *tab_base, int sizetab, int cord_x, int cord_y, int size)
+void	ft_display(map mp, square sq)
 {
 	int		i;
 	int		j;
 
 	i = 0;
-	while (tab_base[i] != '\0')
+	while (mp.mem[i] != '\0')
 	{
 		j = 0;
-		while (tab_base[i] != '\n')
+		while (mp.mem[i] != '\n')
 		{
-			if ((j >= (cord_x) && j < cord_x + size) 
-				&& ((i > (cord_x + cord_y * sizetab) 
-				&& (i < cord_x + cord_y * (sizetab + 1) + size * (sizetab + 1)))))
+			if ((j >= (sq.x) && j < sq.x + sq.size) 
+				&& ((i > (sq.x + sq.y * mp.x) 
+				&& (i < sq.x + sq.y * (mp.x + 1) + sq.size * (mp.x + 1)))))
 				ft_putchar('x');
 			else
-				ft_putchar(tab_base[i]);
+				ft_putchar(mp.mem[i]);
 			j++;
 			i++;
 		}
