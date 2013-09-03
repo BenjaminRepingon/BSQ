@@ -13,6 +13,6 @@
 #ifndef SQUARE_TEST
 # define SQUARE_TEST
 
-int		ft_square_test(st_square square);
+square		ft_square_test(int size, map mp);
 
 #endif

@@ -10,16 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-square		ft_square_test(int size, mp)
-{
-	int		valid;
+#include "ft_check_square.h"
+#include "function.h"
 
-	valid = ft_check_square(sq.size, mp);
-	if (!valid)
+square		ft_square_test(int size, map mp)
+{
+	square	sq;
+	square	sq2;
+
+	sq = ft_check_square(size, mp);
+	sq2 = ft_check_square(size + 1, mp);
+	if (!sq.boolcheck)
 	{
 		ft_square_test(sq.size / 2, mp);
 	}
-	else if (valid && !(ft_check_square(sq.size + 1, mp)))
+	else if (sq.boolcheck && !(sq2.boolcheck))
 	{
 		return (sq);
 	}
@@ -28,5 +33,6 @@ square		ft_square_test(int size, mp)
 		ft_square_test(sq.size * 1.5, mp);
 	}
 	ft_putstr("Error in recursive square test !");
-	return (0);
+	sq.boolcheck = 0;
+	return (sq);
 }

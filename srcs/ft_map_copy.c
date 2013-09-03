@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_map_copy.c                                      :+:      :+:    :+:   */
+/*   ft_mp_copy.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: espiroux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -9,8 +9,15 @@
 /*   Updated: 2013/09/02 13:01:34 by espiroux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#define BUFFSIZE 1
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include "struct.h"
+#include "ft_error.h"
+#include "function.h"
 
 void ft_init(int *x, int *y, int *i, int *fd)
 {
@@ -20,7 +27,7 @@ void ft_init(int *x, int *y, int *i, int *fd)
 	fd = 0;
 }
 
-st_map	ft_map_copy(char *av)
+map	ft_map_copy(char *av, int ac)
 {
 
 	int	fd;
@@ -29,39 +36,39 @@ st_map	ft_map_copy(char *av)
 	int	y;
 	int	i;
 	char	buf[BUFFSIZE + 1];
-	st_map	map;
+	map	mp;
 
 	ft_init(&x, &y, &i, &fd);
-	map.mem = (char*)malloc(BUFFSIZE);
-	if (av != "")
+	mp.mem = (char*)malloc(BUFFSIZE);
+	if (ac < 2)
 	{
-		if (ft_error("map",(fd = open(av, O_RDONLY))))
-			return (0);
+		if (ft_error("mp",(fd = open(av, O_RDONLY))))
+			return (mp);
 	}
-	while ((ret = read(fd, buf, BUF_SIZE)))
+	while ((ret = read(fd, buf, BUFFSIZE)))
 	{
 		if (buf[0] == '\n')
 			y++;
 		if (buf[0] != '\n')
 			x++;
 		buf[ret] = '\0';
-		map.mem[i] = buf[0];
+		mp.mem[i] = buf[0];
 		i++;
 	}
-	map.mem[i] = '\0';
+	mp.mem[i] = '\0';
 	if (y != 0)
 		x = x / y;
 	if (y < x)
 	{
-		map.max = y;
-		map.x = x / y;
-		map.y = y;
+		mp.max = y;
+		mp.x = x / y;
+		mp.y = y;
 	}
 	else
 	{
-		map.max = x;
-		map.x = x;
-		map.y = y;
+		mp.max = x;
+		mp.x = x;
+		mp.y = y;
 	}
-	return (map);
+	return (mp);
 }

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_putstr.h"
+#include "function.h"
 
 int	ft_error(char *name, int err)
 {

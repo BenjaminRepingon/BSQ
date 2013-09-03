@@ -13,6 +13,7 @@
 //#include "function.h"
 #include <unistd.h>
 #include "struct.h"
+#include "function.h"
 
 void	ft_display(map mp, square sq)
 {

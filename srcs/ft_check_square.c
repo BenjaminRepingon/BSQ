@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "struct.h"
-#include <stdio.h>
 
 int ft_check_one_square(int x, int y, square sq, map mp)
 {

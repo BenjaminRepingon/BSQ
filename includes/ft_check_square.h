@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_square_max.h                                    :+:      :+:    :+:   */
+/*   ft_check_square.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rbenjami <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: espiroux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/09/02 13:01:33 by rbenjami          #+#    #+#             */
-/*   Updated: 2013/09/02 13:01:34 by rbenjami         ###   ########.fr       */
+/*   Created: 2013/09/02 18:44:43 by espiroux          #+#    #+#             */
+/*   Updated: 2013/09/02 18:44:43 by espiroux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SQUARE_MAX
-# define SQUARE_MAX
-# define BUFFSIZE 1
+#ifndef FT_CHECK_ONE_SQUARE
+# define FT_CHECK_ONE_SQUARE
+#include "struct.h"
 
-void ft_init(int *x, int *y, int *i, int *fd);
-st_plateau	ft_square_max(char *av);
+int ft_check_one_square(int x, int y, square sq, map mp);
+square	ft_check_square(int size, map mp);
 
 #endif

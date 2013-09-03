@@ -14,5 +14,6 @@
 # define DISPLAY
 
 void	ft_putchar(char c);
+void	ft_display(map mp, square sq);
 
 #endif

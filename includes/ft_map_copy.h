@@ -12,8 +12,7 @@
 
 #ifndef MAP_COPY
 # define MAP_COPY
-# define BUFFSIZE 1
 
-st_map	ft_map_copy(char *av);
+map	ft_map_copy(char *av, int ac);
 
 #endif

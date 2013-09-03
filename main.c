@@ -1,38 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rbenjami <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: espiroux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/09/02 12:14:29 by rbenjami          #+#    #+#             */
-/*   Updated: 2013/09/02 12:14:29 by rbenjami         ###   ########.fr       */
+/*   Created: 2013/09/02 18:44:43 by espiroux          #+#    #+#             */
+/*   Updated: 2013/09/02 18:44:43 by espiroux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		main(int argc, char *argv[])
-{
-	char	*mem;
-	char	buf[BUF_SIZE + 1];
-	int		ret;
-	int		i;
-	int		x;
-	int		y;
+#include "struct.h"
+#include "ft_map_copy.h"
+#include "ft_display.h"
+#include "ft_square_test.h"
 
-	ft_init(&i, &x, &y);
-	mem = (char*)malloc(BUF_SIZE);
-	while ((ret = read(0, buf, BUF_SIZE)))
+int main(int argc, char *argv[])
+{
+	int i;
+	square sq;
+	map mp;
+	int size;
+
+	i = 1;
+	if (argc == 1)
 	{
-		if (buf[0] == '\n')
-			y++;
-		if (buf[0] != '\n')
-			x++;
-		buf[ret] = '\0';
-		mem[i] = buf[0];
-		i++;
+		mp = ft_map_copy(argv[0], argc);
+		size = mp.max;
+		sq = ft_square_test(size, mp);
+		ft_display(mp, sq);
 	}
-	mem[i] = '\0';
-	if (y != 0)
-		x = x / y;
+	else
+	{
+		while (i < argc)
+		{
+			mp = ft_map_copy(argv[i], argc);
+			size = mp.max;
+			sq = ft_square_test(size, mp);
+			ft_display(mp, sq);
+			i++;
+		}
+	}
 	return (0);
 }
