@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int main(int argc, char const *argv[])
+int main(int argc, char *argv[])
 {
 	int i;
 	st_square square;
@@ -18,7 +18,7 @@ int main(int argc, char const *argv[])
 
 	i = 1;
 	if (argc == 1)
-		ft_square_copy("");
+		ft_map_copy("");
 	else
 	{
 		while (i < argc)

@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   function.h                                         :+:      :+:    :+:   */
+/*   ft_map_copy.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbenjami <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/09/02 13:02:11 by rbenjami          #+#    #+#             */
-/*   Updated: 2013/09/02 13:02:12 by rbenjami         ###   ########.fr       */
+/*   Created: 2013/09/02 13:01:33 by rbenjami          #+#    #+#             */
+/*   Updated: 2013/09/02 13:01:34 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FUNCTION
-# define FUNCTION
+#ifndef MAP_COPY
+# define MAP_COPY
+# define BUFFSIZE 1
 
-void	ft_putchar(char c);
+st_map	ft_map_copy(char *av);
 
 #endif
