@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   function.h                                         :+:      :+:    :+:   */
+/*   ft_error.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbenjami <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/09/02 13:02:11 by rbenjami          #+#    #+#             */
-/*   Updated: 2013/09/02 13:02:12 by rbenjami         ###   ########.fr       */
+/*   Created: 2013/08/28 22:50:51 by rbenjami          #+#    #+#             */
+/*   Updated: 2013/08/28 22:50:51 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FUNCTION
-# define FUNCTION
+#ifndef ERROR
+# define ERROR
 
-void	ft_putchar(char c);
+int	ft_error(char *name, int err);
 
 #endif

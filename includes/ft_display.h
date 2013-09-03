@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   function.h                                         :+:      :+:    :+:   */
+/*   ft_display.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbenjami <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/09/02 13:02:11 by rbenjami          #+#    #+#             */
-/*   Updated: 2013/09/02 13:02:12 by rbenjami         ###   ########.fr       */
+/*   Created: 2013/09/02 18:44:43 by rbenjami          #+#    #+#             */
+/*   Updated: 2013/09/02 18:44:43 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FUNCTION
-# define FUNCTION
+#ifndef DISPLAY
+# define DISPLAY
 
 void	ft_putchar(char c);
 
