@@ -10,43 +10,45 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "struct.h"
-void ft_init(int *i, int *j, int *k, int *l, st_square *square)
+#include <stdio.h>
+
+void	ft_init(int *i, int *j, int *l, square *sq)
 {
 	i = 0;
 	j = 0;
-	k = 0;
 	l = 0;
-	square.boolverif = 0;
+	sq->boolcheck = 0;
 }
 
-st_square ft_check_square(st_square square, st_plateau plateau)
+square	ft_check_square(square sq, map mp)
 {
-	int l;
-	int k;
-	int j;
-	int i;
+	int	l;
+	int	k;
 
-	ft_init(&i, &j, &k, &l, square);
-	while (l < ((plateau.x - square.size) * plateau.y))
+	while (y < mp.y)
 	{
-		while (k < (plateau.x - square.size))
+		while (x < mp.x)
 		{
-			while (J < ((plateau.x - square.size) + k + l))
-			{
-				while (i < square.size)
-				{
-					if (plateau.mem[i + j + k + l] == 'o')
-						return (square);
-				}
-				i = 0;
-				j = (plateau.x + 1) + j + k + l;
-			}
-			j = 0;
-			k++;
+			if (mp.mem[x + (mp.x) * y] == 'o')
+				sq.boolcheck = 0;
+			x++;
 		}
-		k = 0;
-		l = (x + 1) + l;
+		y++;
 	}
-	square.boolverif = 1;
-	return (square);
+	return (sq);
+}
+
+int main()
+{
+	map mp;
+	square sq;
+
+	sq.size = 2;
+	mp.x = 6;
+	mp.y = 3;
+	mp.max = 3;
+	mp.mem = ".ooo..\no.....\n......\n";
+	ft_check_square(sq, mp);
+	printf("origin:%i\nsize:%i\nboolcheck:%i\n", sq.origin, sq.size, sq.boolcheck);
+	return 0;
 }

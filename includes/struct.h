@@ -17,14 +17,14 @@ typedef	struct	st_square
 	int	boolcheck;
 	int origin;
 	int size;
-};
+}   square;
 
-typedef struct st_plateau
+typedef struct st_map
 {
 	char	*mem;
 	int	x;
 	int	y;
 	int	max;
-};
+}	map;
 
 #endif

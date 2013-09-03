@@ -14,19 +14,20 @@ int main(int argc, char const *argv[])
 {
 	int i;
 	st_square square;
-	st_plateau plateau;
+	st_map map;
 
 	i = 1;
 	if (argc == 1)
-		ft_square_copy("");
+		ft_map_copy("");
 	else
 	{
 		while (i < argc)
 		{
 			map = ft_map_copy(argv[i]);
+			square = ft_square_test(map);
+			ft_display(map, square);
 			i++;
 		}
-		ft_square
 	}
 	return (0);
 }
