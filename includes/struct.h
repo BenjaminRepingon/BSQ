@@ -14,14 +14,16 @@
 
 typedef	struct	st_square
 {
-	int	boolverif;
-	int	x;
-	int	y;
+	int	boolcheck;
+	int origin;
+	int size;
 };
 
 typedef struct st_plateau
 {
 	char	*mem;
+	int	x;
+	int	y;
 	int	max;
 };
 
