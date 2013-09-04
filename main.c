@@ -30,6 +30,7 @@ int	main(int argc, char *argv[])
 		size = mp.max;
 		sq = ft_square_test(size, mp);
 		ft_display(mp, sq);
+		printf("mp:\nx:%i\ty:%i\tmax:%i\terreur:%i\t\nempty: %c\tobstacle: %c\tprint: %c\t\n", mp.x, mp.y, mp.max, mp.error, mp.empty, mp.obstacle, mp.print );
 	}
 	else
 	{
@@ -38,8 +39,8 @@ int	main(int argc, char *argv[])
 			mp = ft_map_copy(argv[i], argc);
 			size = mp.max;
 			sq = ft_square_test(size, mp);
-			//printf("x:%i\ny:%i\nsize:%i\n", sq.x, sq.y, sq.size);
 			ft_display(mp, sq);
+			printf("mp:\nx:%i\ty:%i\tmax:%i\terreur:%i\t\nempty: %c\tobstacle: %c\tprint: %c\t\n", mp.x, mp.y, mp.max, mp.error, mp.empty, mp.obstacle, mp.print );
 			i++;
 		}
 	}

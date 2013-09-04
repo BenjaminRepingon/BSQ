@@ -13,8 +13,8 @@
 #ifndef FT_MAP_MAX
 # define FT_MAP_MAX
 
-void ft_map_max(int y, int x, map mp);
-void map_init(map mp);
-void map_count(map mp, char *buf);
+void ft_map_max(map *mp);
+void map_init(map *mp);
+void map_count(map *mp, char *buf);
 
 #endif

@@ -17,11 +17,13 @@
 #include <unistd.h>
 #include "struct.h"
 #include "function.h"
+#include "ft_map.h"
+#include "pushpullchar.h"
 
 /*
 **copie file to struct map in the variable mem.
 */
-void ft_count_clone_file(map mp, int fd, char *buf, int ret)
+void ft_count_clone_file(map *mp, int fd, char *buf, int ret)
 {
 	int count;
 	int i;
@@ -37,24 +39,22 @@ void ft_count_clone_file(map mp, int fd, char *buf, int ret)
 		if (count != 0)
 		{
 			map_count(mp, buf);
-			mp.mem[i] = buf[0];
+			mp->mem[i] = buf[0];
 			i++;
 		}
-		ft_take_char_first_line(&buf, &count, find_char, &countfind);
+		ft_take_char_first_line(buf, &count, find_char, &countfind);
 		buf[ret] = '\0';
 	}
 	if (close(fd))
-		mp.error = 1;
-	mp.mem[i] = '\0';
-	ft_pull_char_first_line(&countfind, map mp, &find_char);
-	ft_map_max( map mp);
+		mp->error = 1;
+	mp->mem[i] = '\0';
+	ft_pull_char_first_line(countfind, mp, find_char);
+	ft_map_max(mp);
 }
 
 
-
 /*
-**Copy the map in a map's structure
-**find the min between x and y.     
+**Copy the map information in a map's structure    
 */
 
 map	ft_map_copy(char *av, int ac)
@@ -75,6 +75,6 @@ map	ft_map_copy(char *av, int ac)
 			return (mp);
 		}	
 	}
-	ft_count_clone_file(mp, fd, buf, ret);
+	ft_count_clone_file(&mp, fd, buf, ret);
 	return (mp);
 }

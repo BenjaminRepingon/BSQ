@@ -13,7 +13,7 @@
 #ifndef PUSHPULL_H
 #define PUSHPULL_H
 
-void ft_pull_char_first_line(int *countfind, map mp, char *find_char);
+void ft_pull_char_first_line(int countfind, map *mp, char *find_char);
 void ft_take_char_first_line(char *buf, int *count, char *find_char, int *countfind);
 
 #endif

@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "struct.h"
+
 /*
 **Send, to the structure give in parameter, 
 **the value biggest value of the size and 
@@ -17,21 +19,17 @@
 */
 
 
-void ft_map_max(int y, int x, map mp)
+void ft_map_max(map *mp)
 {
-	if (y != 0)
-		x = x / y;
-	if (y < x)
+	if (mp->y != 0)
+		mp->x = mp->x / mp->y;
+	if (mp->y < mp->x)
 	{
-		mp.max = y;
-		mp.x = x / y;
-		mp.y = y;
+		mp->max = mp->y;
 	}
 	else
 	{
-		mp.max = x;
-		mp.x = x;
-		mp.y = y;
+		mp->max = mp->x;
 	}
 }
 
@@ -39,21 +37,21 @@ void ft_map_max(int y, int x, map mp)
 **map initialise
 */
 
-void map_init(map mp)
+void map_init(map *mp)
 {
-	mp.x = 0;
-	mp.y = 0;
-	mp.error = 0;
+	mp->x = 0;
+	mp->y = 0;
+	mp->error = 0;
 }
 
 /*
 **count line of the map.
 */
 
-void map_count(map mp, char *buf)
+void map_count(map *mp, char *buf)
 {
 	if (buf[0] == '\n')
-		mp.y++;
+		mp->y += 1;
 	if (buf[0] != '\n')
-		mp.x++;
+		mp->x += 1;
 }

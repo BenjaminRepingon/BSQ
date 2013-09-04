@@ -16,14 +16,15 @@ GFLAGS	= -Wall -Wextra -Werror
 TEST	= test
 GCT		= gcc -o $(TEST) -I./includes/
 
-MAINC	=	./main.c
-FONCT	=	./srcs/function.c
-SQTES	=	./srcs/ft_square_test.c
-MPCPY	=	./srcs/ft_map_copy.c
-ERROR	=	./srcs/ft_error.c
-DISPL	=	./srcs/ft_display.c
-CHECK	=	./srcs/ft_check_square.c
-
+MAINC	=	main.c
+FONCT	=	srcs/function.c
+SQTES	=	srcs/ft_square_test.c
+MPCPY	=	srcs/ft_map_copy.c
+ERROR	=	srcs/ft_error.c
+DISPL	=	srcs/ft_display.c
+CHECK	=	srcs/ft_check_square.c
+FTMAP	=	srcs/ft_map.c
+PUPUC	=	srcs/pushpullchar.c
 all: $(NAME)
 
 $(NAME):$(MAINC)    $(FONCT)    $(SQTES)    $(MPCPY)    $(ERROR)    $(DISPL)    $(CHECK)
@@ -33,13 +34,10 @@ $(NAME):$(MAINC)    $(FONCT)    $(SQTES)    $(MPCPY)    $(ERROR)    $(DISPL)    
 	@Echo
 	@Echo
 	@Echo
-	$(GCC)	$(MAINC)	$(FONCT)	$(SQTES)	$(MPCPY)	$(ERROR)	$(DISPL)	$(CHECK) $(GFLAGS)
-	@Echo
-	@Echo
-	@Echo "MAKE: End of compilation"
-	@Echo "		     And the world..."
-	@Echo
-	@Echo
+	$(GCC)	$(MAINC)	$(FONCT)	$(SQTES)	$(MPCPY)	$(ERROR)	$(DISPL)	$(CHECK) $(FTMAP) $(PUPUC) $(GFLAGS)
+	@Echo "MAKE: End of the world"
+	@Echo "		     And Compilation..."
+
 
 test:
 	$(GCT) $(CHECK) $(FONCT) $(GFLAGS)
