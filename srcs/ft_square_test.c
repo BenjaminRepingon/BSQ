@@ -12,27 +12,27 @@
 
 #include "ft_check_square.h"
 #include "function.h"
+#include <stdio.h>
 
 square		ft_square_test(int size, map mp)
 {
 	square	sq;
 	square	sq2;
-
 	sq = ft_check_square(size, mp);
 	sq2 = ft_check_square(size + 1, mp);
-	if (!sq.boolcheck)
+	while (!(sq.boolcheck) || sq2.boolcheck)
 	{
-		ft_square_test(sq.size / 2, mp);
+		if (!sq.boolcheck)
+		{
+			sq.size = (sq.size / 2) + 1;
+		}
+		else
+		{
+			sq.size = (sq.size * 3) / 3 + 1;
+		}
+		sq = ft_check_square(sq.size, mp);
+		sq2 = ft_check_square(sq.size + 1, mp);
 	}
-	else if (sq.boolcheck && !(sq2.boolcheck))
-	{
-		return (sq);
-	}
-	else
-	{
-		ft_square_test(sq.size * 1.5, mp);
-	}
-	ft_putstr("Error in recursive square test !");
-	sq.boolcheck = 0;
+
 	return (sq);
 }

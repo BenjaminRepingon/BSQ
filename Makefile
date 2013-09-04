@@ -10,11 +10,11 @@
 #                                                                              #
 #******************************************************************************#
 NAME	= bsq 
-GCC		= gcc -o $(NAME) -I./includes/
+GCC		= gcc -o $(NAME) -I./includes/ 
 GFLAGS	= -Wall -Wextra -Werror
 
 TEST	= test
-GCT		= gcc -o $(TEST) -I./includes/
+GCT		= gcc -c -I./includes/
 
 MAINC	=	./main.c
 FONCT	=	./srcs/function.c

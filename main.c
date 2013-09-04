@@ -14,6 +14,7 @@
 #include "ft_map_copy.h"
 #include "ft_display.h"
 #include "ft_square_test.h"
+#include <stdio.h>
 
 int main(int argc, char *argv[])
 {
@@ -37,6 +38,7 @@ int main(int argc, char *argv[])
 			mp = ft_map_copy(argv[i], argc);
 			size = mp.max;
 			sq = ft_square_test(size, mp);
+			//printf("x:%i\ny:%i\nsize:%i\n", sq.x, sq.y, sq.size);
 			ft_display(mp, sq);
 			i++;
 		}

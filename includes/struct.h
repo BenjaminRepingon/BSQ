@@ -15,10 +15,10 @@
 typedef	struct	st_square
 {
 	int	boolcheck;
-	int x;
-	int y;
-	int size;
-}   square;
+	int	x;
+	int	y;
+	int	size;
+}	square;
 
 typedef struct st_map
 {
