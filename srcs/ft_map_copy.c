@@ -44,7 +44,7 @@ void map_count(map mp, char *buf)
 /*
 **copie file to struct map in the variable mem.
 */
-void ft_count_clone_file(map mp, int *fd, char *buf)
+void ft_count_clone_file(map mp, int fd, char *buf, int ret)
 {
 	int count;
 	int i;
@@ -138,6 +138,7 @@ map	ft_map_copy(char *av, int ac)
 	int	fd;
 	char	buf[BUFFSIZE + 1];
 	map	mp;
+	int ret;
 
 
 	fd = 0;
@@ -150,6 +151,6 @@ map	ft_map_copy(char *av, int ac)
 			return (mp);
 		}	
 	}
-	ft_count_clone_file(mp, &fd, buf);
+	ft_count_clone_file(mp, fd, buf, ret);
 	return (mp);
 }
