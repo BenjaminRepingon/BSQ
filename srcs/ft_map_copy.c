@@ -43,7 +43,9 @@ map	ft_map_copy(char *av, int ac)
 	int	x;
 	int	y;
 	int	i;
+	int countfind;
 	int count;
+	char find_char[13];
 	char	buf[BUFFSIZE + 1];
 	map	mp;
 
@@ -51,9 +53,17 @@ map	ft_map_copy(char *av, int ac)
 	x = 0;
 	y = 0;
 	fd = 0;
+
+
 	count = 0;
-	mp.error = 0;
+	countfind = 0;
+
+
+
+	mp.error = 0;	
 	mp.mem = (char*)malloc(BUFFSIZE);
+	
+
 	if (ac > 1)
 	{
 		if ((fd = open(av, O_RDONLY)))
@@ -74,15 +84,57 @@ map	ft_map_copy(char *av, int ac)
 			mp.mem[i] = buf[0];
 			i++;
 		}
-		if (buf[0] == '\n')
+
+
+		/*
+		**sauvegarde de la premiere ligne pour la gestion des caractere.
+		*/
+
+		if (buf[0] == '\n' && count == 0 )
 			count = 1;
+		else if (buf[0] != '\n'&& count == 0)
+		{
+			find_char[countfind] = buf[0];
+			countfind++;
+		}
 		buf[ret] = '\0';
+
+
 	}
+
+	/*
+	**closing file.
+	*/
+
 	if (close(fd))
-	{
 		mp.error = 1;
-	}
 	mp.mem[i] = '\0';
+
+
+	/*
+	**ajout des caractere a la structure.
+	*/
+	if (countfind > 0)
+	{
+		mp.empty = find_char[countfind - 2];
+		mp.obstacle = find_char[countfind - 1];
+		mp.print = find_char[countfind];
+	}
+	else
+		mp.error = 1;
+
+
+
+
+
+	
+	
+
+	
+	/*
+	**Square max.
+	*/
+
 	if (y != 0)
 		x = x / y;
 	if (y < x)
@@ -97,5 +149,7 @@ map	ft_map_copy(char *av, int ac)
 		mp.x = x;
 		mp.y = y;
 	}
+	
+
 	return (mp);
 }
