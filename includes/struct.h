@@ -27,8 +27,8 @@ typedef	struct st_map
 	int	y;
 	int	max;
 	int	error;
-	char	empty
-	char	obstacle
+	char	empty;
+	char	obstacle;
 	char	print;
 }	map;
 
