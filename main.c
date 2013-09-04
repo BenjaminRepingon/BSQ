@@ -16,12 +16,12 @@
 #include "ft_square_test.h"
 #include <stdio.h>
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
-	int i;
-	square sq;
-	map mp;
-	int size;
+	int	i;
+	square	sq;
+	map	mp;
+	int	size;
 
 	i = 1;
 	if (argc == 1)
