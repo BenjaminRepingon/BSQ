@@ -27,7 +27,7 @@ void	ft_display(map mp, square sq)
 		while (mp.mem[i] != '\n')
 		{
 			if ((j >= (sq.x) && j < sq.x + sq.size) 
-				&& ((i > (sq.x + sq.y * mp.x) 
+				&& ((i >= (sq.x + sq.y * mp.x) 
 				&& (i < sq.x + sq.y * (mp.x + 1) + sq.size * (mp.x + 1)))))
 				ft_putchar('x');
 			else

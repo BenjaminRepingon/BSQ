@@ -28,7 +28,7 @@ square		ft_square_test(int size, map mp)
 		}
 		else
 		{
-			sq.size = (sq.size * 3) / 3 + 1;
+			sq.size = sq.size + 1;
 		}
 		sq = ft_check_square(sq.size, mp);
 		sq2 = ft_check_square(sq.size + 1, mp);
