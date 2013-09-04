@@ -29,7 +29,6 @@ void ft_init(int *x, int *y, int *i, int *fd)
 
 map	ft_map_copy(char *av, int ac)
 {
-
 	int	fd;
 	int	ret;
 	int	x;
