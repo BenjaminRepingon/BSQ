@@ -13,6 +13,9 @@ NAME	= bsq
 GCC		= gcc -o $(NAME) -I./includes/
 GFLAGS	= -Wall -Wextra -Werror
 
+TEST	= test
+GCT		= gcc -o $(TEST) -I./includes/
+
 MAINC	=	./main.c
 FONCT	=	./srcs/function.c
 SQTES	=	./srcs/ft_square_test.c
@@ -38,7 +41,11 @@ $(NAME):
 	@Echo
 	@Echo
 
+test:
+	$(GCT) $(MPCPY) $(ERROR) $(FONCT) $(GFLAGS)
+
 clean:
+	rm -f $(TEST)
 	rm -f $(NAME)
 
 fclean:

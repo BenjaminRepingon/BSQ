@@ -35,33 +35,37 @@ map	ft_map_copy(char *av, int ac)
 	int	x;
 	int	y;
 	int	i;
+	int count;
 	char	buf[BUFFSIZE + 1];
 	map	mp;
 
-	ft_init(&x, &y, &i, &fd);
+	i = 0;
+	x = 0;
+	y = 0;
+	fd = 0;
+	count = 0;
 	mp.mem = (char*)malloc(BUFFSIZE);
-	if (ac < 2)
+	if (ac > 1)
 	{
 		if (ft_error("mp",(fd = open(av, O_RDONLY))))
 			return (mp);
 	}
 	while ((ret = read(fd, buf, BUFFSIZE)))
 	{
-		if (y < 1)
-		{
-			y++;
-		}
-		else
+		if (count != 0)
 		{
 			if (buf[0] == '\n')
 				y++;
 			if (buf[0] != '\n')
 				x++;
+			mp.mem[i] = buf[0];
+			i++;
 		}
+		if (buf[0] == '\n')
+			count = 1;
 		buf[ret] = '\0';
-		mp.mem[i] = buf[0];
-		i++;
 	}
+	ft_error("mp", close(fd));
 	mp.mem[i] = '\0';
 	if (y != 0)
 		x = x / y;
@@ -79,3 +83,12 @@ map	ft_map_copy(char *av, int ac)
 	}
 	return (mp);
 }
+
+/*int main()
+{
+	map mp;
+	printf("Depart\n");
+	mp = ft_map_copy("testtab", 2);
+	printf("%s", mp.mem);
+	return 0;
+}*/
