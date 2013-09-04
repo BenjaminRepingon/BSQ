@@ -12,10 +12,18 @@
 
 #include <unistd.h>
 
+/*
+**Display a character
+*/
+
 void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
+
+/*
+**Display a string of character
+*/
 
 void	ft_putstr(char *str)
 {

@@ -12,6 +12,10 @@
 
 #include "function.h"
 
+/*
+**Display a map error.
+*/
+
 int	ft_error(char *name, int err)
 {
 	char	*end;

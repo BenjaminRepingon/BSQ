@@ -52,11 +52,16 @@ map	ft_map_copy(char *av, int ac)
 	y = 0;
 	fd = 0;
 	count = 0;
+	mp.error = 0;
 	mp.mem = (char*)malloc(BUFFSIZE);
 	if (ac > 1)
 	{
-		if (ft_error("mp",(fd = open(av, O_RDONLY))))
+		if ((fd = open(av, O_RDONLY)))
+		{
+			mp.error = 1;
 			return (mp);
+		}
+			
 	}
 	while ((ret = read(fd, buf, BUFFSIZE)))
 	{
@@ -73,7 +78,10 @@ map	ft_map_copy(char *av, int ac)
 			count = 1;
 		buf[ret] = '\0';
 	}
-	ft_error("mp", close(fd));
+	if (close(fd))
+	{
+		mp.error = 1;
+	}
 	mp.mem[i] = '\0';
 	if (y != 0)
 		x = x / y;

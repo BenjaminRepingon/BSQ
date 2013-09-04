@@ -10,7 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "struct.h"
-#include <stdio.h>
+
+/*
+**	Check if the square contain a false character
+**	if he doesn't find it, return true (1);
+**	else return 0.
+**	Speed Optimization: When a false charater is find,
+**	go directly at the next square who don't have this
+**  bad caractere in x coordinate.
+*/
 
 int ft_check_one_square(int *x, int *y, square sq, map mp)
 {
@@ -36,12 +44,16 @@ int ft_check_one_square(int *x, int *y, square sq, map mp)
 	return (1);
 }
 
+/*
+**check where is origin, in the map, of a good square with
+**size passing in parameter
+*/
+
 square	ft_check_square(int size, map mp)
 {
 	int	x;
 	int	y;
 	square sq;
-	printf("%d\n", size);
 	y = 0;
 	sq.size = size;
 	sq.boolcheck = 0;

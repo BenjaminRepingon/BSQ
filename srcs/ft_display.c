@@ -15,6 +15,11 @@
 #include "struct.h"
 #include "function.h"
 
+/*
+**Display the map and add the square with
+**origin(x, y) and size.
+*/
+
 void	ft_display(map mp, square sq)
 {
 	int		i;

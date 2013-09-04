@@ -14,6 +14,11 @@
 #include "function.h"
 #include <stdio.h>
 
+/*
+**This function give a size to check_square 
+**and 
+*/
+
 square		ft_square_test(int size, map mp)
 {
 	square	sq;

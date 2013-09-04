@@ -26,6 +26,7 @@ typedef struct st_map
 	int	x;
 	int	y;
 	int	max;
+	int error;
 }	map;
 
 #endif
