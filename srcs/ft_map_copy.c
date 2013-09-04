@@ -116,9 +116,9 @@ map	ft_map_copy(char *av, int ac)
 	*/
 	if (countfind > 0)
 	{
-		mp.empty = find_char[countfind - 2];
-		mp.obstacle = find_char[countfind - 1];
-		mp.print = find_char[countfind];
+		mp.empty = find_char[countfind - 3];
+		mp.obstacle = find_char[countfind - 2];
+		mp.print = find_char[countfind - 1];
 	}
 	else
 		mp.error = 1;
