@@ -19,6 +19,10 @@
 #include "ft_error.h"
 #include "function.h"
 
+/*
+**Initialise x and y as i for increment saving of the map    
+*/
+
 void ft_init(int *x, int *y, int *i, int *fd)
 {
 	x = 0;
@@ -26,6 +30,11 @@ void ft_init(int *x, int *y, int *i, int *fd)
 	i = 0;
 	fd = 0;
 }
+
+/*
+**Copy the map in a map's structure
+**find the min between x and y.     
+*/
 
 map	ft_map_copy(char *av, int ac)
 {
@@ -82,12 +91,3 @@ map	ft_map_copy(char *av, int ac)
 	}
 	return (mp);
 }
-
-/*int main()
-{
-	map mp;
-	printf("Depart\n");
-	mp = ft_map_copy("testtab", 2);
-	printf("%s", mp.mem);
-	return 0;
-}*/
