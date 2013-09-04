@@ -6,7 +6,7 @@
 #    By: rbenjami <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/09/02 12:14:22 by rbenjami          #+#    #+#              #
-#    Updated: 2013/09/03 23:38:59 by espiroux         ###   ########.fr        #
+#    Updated: 2013/09/04 15:50:56 by espiroux         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 NAME	= bsq 
@@ -14,7 +14,7 @@ GCC		= gcc -o $(NAME) -I./includes/
 GFLAGS	= -Wall -Wextra -Werror
 
 TEST	= test
-GCT		= gcc -c -I./includes/
+GCT		= gcc -o $(TEST) -I./includes/
 
 MAINC	=	./main.c
 FONCT	=	./srcs/function.c
@@ -26,7 +26,7 @@ CHECK	=	./srcs/ft_check_square.c
 
 all: $(NAME)
 
-$(NAME):
+$(NAME):$(MAINC)    $(FONCT)    $(SQTES)    $(MPCPY)    $(ERROR)    $(DISPL)    $(CHECK)
 	@Echo
 	@Echo
 	@Echo "MAKE: Starting compilation"
@@ -42,7 +42,7 @@ $(NAME):
 	@Echo
 
 test:
-	$(GCT) $(MPCPY) $(ERROR) $(FONCT) $(GFLAGS)
+	$(GCT) $(CHECK) $(FONCT) $(GFLAGS)
 
 clean:
 	rm -f $(TEST)
