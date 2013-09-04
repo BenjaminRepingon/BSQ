@@ -16,7 +16,7 @@
 
 /*
 **This function give a size to check_square 
-**and 
+**and find what the size who are the biggest and the top-left,
 */
 
 square		ft_square_test(int size, map mp)
