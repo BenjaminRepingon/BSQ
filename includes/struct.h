@@ -29,7 +29,7 @@ typedef	struct st_map
 	int	error;
 	char	empty
 	char	obstacle
-	char	imp;
+	char	print;
 }	map;
 
 #endif
