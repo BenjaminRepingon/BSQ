@@ -34,7 +34,7 @@ void	ft_display(map mp, square sq)
 			if ((j >= (sq.x) && j < sq.x + sq.size) 
 				&& ((i >= (sq.x + sq.y * mp.x) 
 				&& (i < sq.x + sq.y * (mp.x + 1) + sq.size * (mp.x + 1)))))
-				ft_putchar('x');
+				ft_putchar(mp.print);
 			else
 				ft_putchar(mp.mem[i]);
 			j++;
