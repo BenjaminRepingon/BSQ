@@ -105,9 +105,9 @@ void ft_pull_char_first_line(int *countfind, map mp, char *find_char)
 {
 	if (countfind > 0)
 	{
-		mp.empty = find_char[countfind - 2];
-		mp.obstacle = find_char[countfind - 1];
-		mp.print = find_char[countfind];
+		mp.empty = find_char[countfind - 3];
+		mp.obstacle = find_char[countfind - 2];
+		mp.print = find_char[countfind - 1];
 	}
 	else
 		mp.error = 1;
