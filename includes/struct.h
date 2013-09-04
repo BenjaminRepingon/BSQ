@@ -20,13 +20,16 @@ typedef	struct	st_square
 	int	size;
 }	square;
 
-typedef struct st_map
+typedef	struct st_map
 {
 	char	*mem;
 	int	x;
 	int	y;
 	int	max;
-	int error;
+	int	error;
+	char	empty
+	char	obstacle
+	char	imp;
 }	map;
 
 #endif
