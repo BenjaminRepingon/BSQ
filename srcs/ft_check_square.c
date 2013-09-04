@@ -57,7 +57,7 @@ square	ft_check_square(int size, map mp)
 	y = 0;
 	sq.size = size;
 	sq.boolcheck = 0;
-	while (y <= ((mp.y + 1) - sq.size))
+	while (y < ((mp.y + 1) - sq.size))
 	{
 		x = 0;
 		while (x <= (mp.x - sq.size))

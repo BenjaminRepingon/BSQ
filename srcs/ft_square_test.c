@@ -29,7 +29,7 @@ square		ft_square_test(int size, map mp)
 	{
 		if (!sq.boolcheck)
 		{
-			sq.size = (sq.size / 2) + 1;
+			sq.size = (sq.size / 2);
 		}
 		else
 		{
