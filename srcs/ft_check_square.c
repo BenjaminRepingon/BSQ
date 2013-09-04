@@ -32,7 +32,7 @@ int ft_check_one_square(int *x, int *y, square sq, map mp)
 		fx = 0;
 		while (fx < sq.size)
 		{	
-			if (mp.mem[(fx + *x) + (mp.x + 1) * (*y + fy)] == 'o')
+			if (mp.mem[(fx + *x) + (mp.x + 1) * (*y + fy)] == mp.obstacle)
 			{
 				*x = fx + *x; 
 				return (0);
