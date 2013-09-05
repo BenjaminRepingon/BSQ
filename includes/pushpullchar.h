@@ -14,6 +14,7 @@
 #define PUSHPULL_H
 
 void ft_pull_char_first_line(int countfind, map *mp, char *find_char);
-void ft_take_char_first_line(char *buf, int *count, char *find_char, int *countfind);
+char* cut_first_line_take_char(char *buf,map *mp);
+void ft_take_char_first_line(char *buf, char *find_char, int *countfind);
 
 #endif

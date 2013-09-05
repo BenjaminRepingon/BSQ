@@ -11,9 +11,11 @@
 /* ************************************************************************** */
 
 #include "struct.h"
+#include "function.h"
+#include <stdlib.h>
 
 /*
-**pull all character nessecery for the map in the map's.
+**pull all character necessary for the map in the map's.
 */
 
 void ft_pull_char_first_line(int countfind, map *mp, char *find_char)
@@ -29,14 +31,39 @@ void ft_pull_char_first_line(int countfind, map *mp, char *find_char)
 }
 
 /*
+**cut the beggin of the string and take character 
+**for understand the map. 
+*/
+
+char* cut_first_line_take_char(char *buf,map *mp)
+{
+	char *cutchar;
+	int buflen;
+	int nlen;
+	int i;
+
+	i = 0;
+	nlen = 0;
+	buflen = ft_strlen(buf);
+	while (buf[nlen] != '\n')
+		nlen++;
+	cutchar = (char*) malloc(buflen - nlen);
+	while (i < (buflen - nlen))
+	{
+		cutchar[i] = buf[i + nlen];
+		i++;
+	}
+	ft_pull_char_first_line(nlen, mp, buf);
+	return (cutchar);
+}
+
+/*
 **Take characters who define the map 
 */
 
-void ft_take_char_first_line(char *buf, int *count, char *find_char, int *countfind)
+void ft_take_char_first_line(char *buf, char *find_char, int *countfind)
 {
-	if (buf[0] == '\n' && *count == 0 )
-		*count = 1;
-	else if (buf[0] != '\n'&& *count == 0)
+	if (buf[0] != '\n')
 	{
 		find_char[*countfind] = buf[0];
 		*countfind += 1;
