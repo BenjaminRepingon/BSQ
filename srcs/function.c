@@ -80,14 +80,14 @@ char*  ft_strstr(char *str1, char *str2)
 	i = 0;
 	j = 0;
 	str = (char*) malloc ((str1len = ft_strlen(str1)) + (str2len = ft_strlen(str2)) + 1);
-	while (j <= str1len)
+	while (j < str1len)
 	{
 		str[i] = str1[j];
 		j++;
 		i++;
 	}
 	j = 0;
-	while (j <= str2len)
+	while (j < str2len)
 	{
 		str[i] = str2[j];
 		j++;
